@@ -1,0 +1,21 @@
+<!-- res/drawable/custom_edittext_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Focused state -->
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="2dp"
+                android:color="#232B2E" />
+        </shape>
+    </item>
+    <!-- Default state (not focused) -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="2dp"
+                android:color="#232B2E" />
+        </shape>
+    </item>
+</selector>
