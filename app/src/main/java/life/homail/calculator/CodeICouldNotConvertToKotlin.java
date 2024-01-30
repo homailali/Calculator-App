@@ -31,4 +31,17 @@ public class CodeICouldNotConvertToKotlin {
         }
         return count>4;
     }
+    protected StringBuilder removeMultiplyMinus(StringBuilder equation){
+        StringBuilder tempStr=new StringBuilder(equation);
+        if (equation.toString().contains("x-")){
+            try {
+                for (int i = 0; i < tempStr.length(); i++) {
+                    if (tempStr.charAt(i)=='x' && tempStr.charAt(i+1)=='-'){
+                        tempStr.deleteCharAt(i+1);
+                    }
+                }
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException){}
+        }
+        return tempStr;
+    }
 }

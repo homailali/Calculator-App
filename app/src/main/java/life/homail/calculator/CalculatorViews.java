@@ -121,15 +121,20 @@ public class CalculatorViews{
         else if (view.getId()==R.id.leftBracketBtn) this.addTextToTextField("(");
         else if (view.getId()==R.id.allClear) this.textFieldWhereUserEnters.setText(null);
         else if (view.getId()==R.id.deleteOneBtn){
-            StringBuilder stringBuilder=new StringBuilder(Objects.requireNonNull(this.textFieldWhereUserEnters.getText(),"Text Field is null"));
-            if (stringBuilder.toString().isEmpty()) return;
-            stringBuilder.deleteCharAt(stringBuilder.length()-1);
-            this.textFieldWhereUserEnters.setText(stringBuilder.toString());
+            this.deleteOneUserEnterTextField();
         }
         else if (view.getId()==R.id.equalBtn){
             this.calculatorMain.equalBtnHandler.equalBtnHandlerMain();
         }
     }
+
+    private void deleteOneUserEnterTextField(){
+        StringBuilder stringBuilder1=new StringBuilder(Objects.requireNonNull(this.textFieldWhereUserEnters.getText(),"Text Field is null"));
+        if (stringBuilder1.toString().isEmpty()) return;
+        stringBuilder1.deleteCharAt(stringBuilder1.length()-1);
+        this.textFieldWhereUserEnters.setText(stringBuilder1.toString());
+    }
+
     private void addTextToTextField(String text){
 
         this.textFieldWhereUserEnters.append(text);

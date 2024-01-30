@@ -22,7 +22,8 @@ class IfValidExpression(private val calculatorMain: CalculatorMain){
     // Symbols and decimal points errors
     private fun checkNumberOfSymbolsAndNumberOfDigits(bool: Boolean):Boolean{
         if (!bool) return false
-        for (char in this.equation){
+        var tempStr:StringBuilder=this.checkForMultiplyMinus()
+        for (char in tempStr){
             if (this.isCharSymbol(char)){
                 this.symbols.add(char.toString())
                 if (this.numStr.isNotEmpty()){
@@ -34,6 +35,9 @@ class IfValidExpression(private val calculatorMain: CalculatorMain){
         if (this.numStr.isNotEmpty()) this.numbers.add(numStr.toString())
         if (this.symbols.size==0) return false
         return symbols.size+1==this.numbers.size
+    }
+    private fun checkForMultiplyMinus(): StringBuilder {
+        return calculatorMain.codeICouldNotConvertToKotlin.removeMultiplyMinus(this.equation);
     }
     private fun checkForFirstSymbol(bool: Boolean):Boolean{
         if (!bool || this.equation.length<=2) return false

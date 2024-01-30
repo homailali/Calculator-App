@@ -56,11 +56,17 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
     }
     private fun findTheNumberAfter(index: Int):StringBuilder{
         val indexToStart:Int=index+1;
+        var boolean:Boolean=false
         val tempStringBuilder:StringBuilder= StringBuilder()
         for (i in indexToStart until this.equation.length){
             if (this.ifCharIsSymbol(this.equation[i])){
-                break
+                if (!boolean) {
+                    tempStringBuilder.append(this.equation[i])
+                    this.equation.setCharAt(i,'a')
+                }
+                else break
             } else {
+                boolean=true
                 tempStringBuilder.append(this.equation[i])
                 this.equation.setCharAt(i,'a')
             }
