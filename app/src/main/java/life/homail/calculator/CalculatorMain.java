@@ -3,6 +3,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 public class CalculatorMain extends AppCompatActivity{
     protected CalculatorViews calculatorViews;
+    protected BracketSolver bracketSolver=new BracketSolver(this);
+    protected EqualBtnHandler equalBtnHandler=new EqualBtnHandler(this);
     protected SolveExpression solveExpression=new SolveExpression(this);
     protected IfValidExpression ifValidExpression=new IfValidExpression(this);
     protected NumberBtnEventHandler numberBtnEventHandler=new NumberBtnEventHandler(this);
@@ -18,11 +20,4 @@ public class CalculatorMain extends AppCompatActivity{
     private void doSomeThingsAfterLayoutHasBeenSetUp(){
         this.calculatorViews=new CalculatorViews(this);
     }
-
-
-
-
-    // This could not write the code for this method in kotlin
-
-
 }

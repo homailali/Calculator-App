@@ -126,11 +126,12 @@ public class CalculatorViews{
             stringBuilder.deleteCharAt(stringBuilder.length()-1);
             this.textFieldWhereUserEnters.setText(stringBuilder.toString());
         }
-        else if (view.getId()==R.id.equalBtn){}
+        else if (view.getId()==R.id.equalBtn){
+            this.calculatorMain.equalBtnHandler.equalBtnHandlerMain();
+        }
     }
     private void addTextToTextField(String text){
 
         this.textFieldWhereUserEnters.append(text);
     }
-
 }

@@ -8,16 +8,17 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
     private var ifMinusAddedInPreviousNumber:Boolean=false
     // Methods
     fun solveExpressionMain(equation:String):String{
-        this.resetSomeThings()
         this.equation=StringBuilder(equation)
         this.solvingExpression()
         return this.equation.toString()
     }
     private fun solvingExpression(){
         while (this.ifEquationSolved()){
+            this.resetSomeThings()
             this.operatorToLookFor=this.findOperatorToLookFor()
             this.separateNumberAndSymbol()
         }
+        this.equation=this.checkNumOfDigitsAfterDecimalPoint(this.equation)
     }
     private fun separateNumberAndSymbol(){
         var num1Str:StringBuilder=StringBuilder()
@@ -40,15 +41,18 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
     private fun perFormCalc(num1Str:StringBuilder,num2Str:StringBuilder){
         val num1:Double=num1Str.toString().toDouble()
         val num2:Double=num2Str.toString().toDouble()
-        val answer:Double;
+        var doubleAnswer:Double;
         when(this.operatorToLookFor){
-            '/'->answer=num1/num2
-            'x'->answer=num1*num2
-            '+'->answer=num1+num2
-            '-'->answer=num1-num2
-            else->answer=0.0;
+            '/'->doubleAnswer=num1/num2
+            'x'->doubleAnswer=num1*num2
+            '+'->doubleAnswer=num1+num2
+            '-'->doubleAnswer=num1-num2
+            else->doubleAnswer=0.0;
         }
-        this.equation.insert(this.indexToPutTheSolvedEquation,answer.toString())
+        if (this.removeUnnecessaryDecimalPoint(doubleAnswer)){
+            this.equation.insert(this.indexToPutTheSolvedEquation,doubleAnswer.toInt().toString())
+        } else this.equation.insert(this.indexToPutTheSolvedEquation,doubleAnswer.toString())
+        this.checkIfMinusAdded(doubleAnswer)
     }
     private fun findTheNumberAfter(index: Int):StringBuilder{
         val indexToStart:Int=index+1;
@@ -85,8 +89,24 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
     }
     private fun ifCharIsSymbol(char:Char): Boolean {
         when (char) {
-            '/', '+', '-', 'x','X' -> return true
+            '/', '+', '-', 'x' -> return true
             else -> return false
+        }
+    }
+    private fun removeUnnecessaryDecimalPoint(doubleAnswer:Double):Boolean{
+        var tempStringBuilder:StringBuilder=StringBuilder(doubleAnswer.toString())
+        try {
+            if (tempStringBuilder.last()=='0' && tempStringBuilder[tempStringBuilder.length-2]=='.'){
+                return true
+            }
+        } catch (indexOutOfBoundsException:IndexOutOfBoundsException){}
+        return false
+    }
+    private fun checkIfMinusAdded(answer:Double){
+        if (this.ifMinusAddedInPreviousNumber){
+            if (answer>=0){
+               this.equation.insert(this.indexToPutTheSolvedEquation,'+')
+            }
         }
     }
     private fun deleteSolvedExpression(){
@@ -113,5 +133,19 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
     private fun resetSomeThings(){
         this.indexToPutTheSolvedEquation=0
         this.ifMinusAddedInPreviousNumber=false
+    }
+    private fun checkNumOfDigitsAfterDecimalPoint(equation:StringBuilder):StringBuilder{
+        var count:Int=0;
+        var bool:Boolean=false
+        var newAnswer:Double;
+        var tempStringBuilder=StringBuilder(equation)
+        for (char:Char in tempStringBuilder){
+            if (bool) count++
+            if (char=='.') bool=true
+        }
+        if (count>4) {
+            tempStringBuilder=this.calculatorMain.codeICouldNotConvertToKotlin.removeSomeDecimalPoints(tempStringBuilder);
+        }
+        return tempStringBuilder
     }
 }
