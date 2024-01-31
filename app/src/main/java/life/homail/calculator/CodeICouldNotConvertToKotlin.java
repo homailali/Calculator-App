@@ -1,4 +1,8 @@
 package life.homail.calculator;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 public class CodeICouldNotConvertToKotlin {
     private CalculatorMain calculatorMain;
     public CodeICouldNotConvertToKotlin(CalculatorMain calculatorMain) {
@@ -29,7 +33,7 @@ public class CodeICouldNotConvertToKotlin {
             if (equation.charAt(i)=='.') bool=true;
             else if (bool) count++;
         }
-        return count>4;
+        return count>8;
     }
     protected StringBuilder removeMultiplyMinus(StringBuilder equation){
         StringBuilder tempStr=new StringBuilder(equation);

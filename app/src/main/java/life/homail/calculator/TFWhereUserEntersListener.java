@@ -21,9 +21,7 @@ public class TFWhereUserEntersListener implements TextWatcher{
             if (editable.toString().contains("(") || editable.toString().contains(")")) this.solvedExpression=this.calculatorMain.bracketSolver.bracketSolverMain(this.equation);
             else this.solvedExpression=new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(String.valueOf(this.equation)));
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(this.solvedExpression);
-        } else if (!editable.toString().isEmpty()){
-            this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(this.calculatorMain.calculatorViews.textFieldWhereUserEnters.getText());
-        } else {
+        } else if (editable.toString().isEmpty()){
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(null);
         }
     }

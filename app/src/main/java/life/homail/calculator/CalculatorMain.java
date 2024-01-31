@@ -8,6 +8,7 @@ public class CalculatorMain extends AppCompatActivity{
     protected SolveExpression solveExpression=new SolveExpression(this);
     protected IfValidExpression ifValidExpression=new IfValidExpression(this);
     protected NumberBtnEventHandler numberBtnEventHandler=new NumberBtnEventHandler(this);
+    protected DarkAndLightModeHandler darkAndLightModeHandler=new DarkAndLightModeHandler(this);
     protected OperatorBtnEventHandler operatorBtnEventHandler=new OperatorBtnEventHandler(this);
     protected TFWhereUserEntersListener TFWhereUserEntersListener=new TFWhereUserEntersListener(this);
     protected CodeICouldNotConvertToKotlin codeICouldNotConvertToKotlin=new CodeICouldNotConvertToKotlin(this);

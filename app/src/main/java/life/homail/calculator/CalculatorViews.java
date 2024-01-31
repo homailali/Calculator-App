@@ -1,6 +1,10 @@
 package life.homail.calculator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.Objects;
 public class CalculatorViews{
@@ -28,9 +32,16 @@ public class CalculatorViews{
     protected Button allClearBtn;
     protected Button deleteOneBtn;
     protected Button equalBtn;
-
+    // Dark And Bright mode btn
+    protected Button darkAndLightModeBtn;
+    // Input Fields
     protected TextInputEditText textFieldWhereAnswerDisplays;
     protected TextInputEditText textFieldWhereUserEnters;
+    // Layouts
+    protected ConstraintLayout constraintLayoutOuter;
+    protected ConstraintLayout constraintLayoutInner;
+    // TextView
+    protected TextView casioHeading;
     // Constructor
     public CalculatorViews(CalculatorMain calculatorMain){
         this.calculatorMain = calculatorMain;
@@ -45,6 +56,9 @@ public class CalculatorViews{
         this.setOperatorBtnEventHandler();
         this.setOtherBtnEventHandler();
         this.setTextFieldHandler();
+        this.initializeAndSetDarkModeHandler();
+        this.initializeConsLayout();
+        this.initializeCasioHeading();
     }
     // Methods
     private void initializeNumberBtn(){
@@ -76,6 +90,17 @@ public class CalculatorViews{
     private void initializeTextFields(){
         this.textFieldWhereUserEnters=this.calculatorMain.findViewById(R.id.textFieldWhereUserEnters);
         this.textFieldWhereAnswerDisplays=this.calculatorMain.findViewById(R.id.textFieldWhereAnswerDisplays);
+    }
+    private void initializeAndSetDarkModeHandler(){
+        this.darkAndLightModeBtn=this.calculatorMain.findViewById(R.id.darkAndLightMode);
+        this.darkAndLightModeBtn.setOnClickListener(this.calculatorMain.darkAndLightModeHandler);
+    }
+    private void initializeConsLayout(){
+        this.constraintLayoutOuter=this.calculatorMain.findViewById(R.id.consLayOuter);
+        this.constraintLayoutInner=this.calculatorMain.findViewById(R.id.consLayInner);
+    }
+    private void initializeCasioHeading(){
+        this.casioHeading=this.calculatorMain.findViewById(R.id.casioHeading);
     }
     // SetEventHandler
     private void setNumberBtnEventHandler() {
@@ -139,4 +164,5 @@ public class CalculatorViews{
 
         this.textFieldWhereUserEnters.append(text);
     }
+
 }

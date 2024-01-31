@@ -6,7 +6,7 @@
             <solid android:color="@android:color/transparent" />
             <stroke
                 android:width="2dp"
-                android:color="#232B2E" />
+                android:color="#2A2E37" />
         </shape>
     </item>
     <!-- Default state (not focused) -->
@@ -15,7 +15,7 @@
             <solid android:color="@android:color/transparent" />
             <stroke
                 android:width="2dp"
-                android:color="#232B2E" />
+                android:color="#2A2E37" />
         </shape>
     </item>
 </selector>

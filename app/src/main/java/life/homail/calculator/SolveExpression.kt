@@ -111,7 +111,7 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
     private fun checkIfMinusAdded(answer:Double){
         if (this.ifMinusAddedInPreviousNumber){
             if (answer>=0){
-               this.equation.insert(this.indexToPutTheSolvedEquation,'+')
+                this.equation.insert(this.indexToPutTheSolvedEquation,'+')
             }
         }
     }
@@ -133,8 +133,8 @@ class SolveExpression(private val calculatorMain: CalculatorMain){
         } else tempStringBuilder=StringBuilder(this.equation)
         return (
                 (tempStringBuilder.contains("/") || tempStringBuilder.contains("x") ||
-             tempStringBuilder.contains("+") || tempStringBuilder.contains("-"))
-        )
+                 tempStringBuilder.contains("+") || tempStringBuilder.contains("-"))
+                )
     }
     private fun resetSomeThings(){
         this.indexToPutTheSolvedEquation=0

@@ -2,24 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/consLayOuter"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".CalculatorMain"
-    android:backgroundTint="@color/white"
-    >
+    android:background="#2A2E37"
+
+    tools:context=".CalculatorMain">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consLayInner"
         android:layout_width="0dp"
-        android:layout_height="0dp"
 
+        android:layout_height="0dp"
         android:layout_marginBottom="-3dp"
-        android:background="#232B2E"
+        android:background="#2A2E37"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
@@ -37,7 +40,7 @@
                 android:id="@+id/textFieldWhereUserEnters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittext_background"
+                android:background="@drawable/custom_bgedittext_dark"
                 android:cursorVisible="false"
                 android:focusable="false"
                 android:fontFamily="@font/baloo_paaji_2_semibold"
@@ -66,7 +69,7 @@
                 android:id="@+id/textFieldWhereAnswerDisplays"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_edittext_background"
+                android:background="@drawable/custom_bgedittext_dark"
                 android:cursorVisible="false"
                 android:focusable="false"
                 android:fontFamily="@font/baloo_paaji_2_semibold"
@@ -81,9 +84,38 @@
                 android:textSize="40dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/casioHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/baloo_paaji_2_semibold"
+            android:text="Casio"
+            android:textColor="@color/white"
+            android:textSize="45dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/darkAndLightMode"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#2A2E37"
+            android:drawableTop="@drawable/light_mode_white"
+
+
+
+            android:paddingTop="5dp"
+            app:cornerRadius="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -100,7 +132,7 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginBottom="-3dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="0"
@@ -115,7 +147,7 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="3"
@@ -132,7 +164,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="4"
@@ -148,7 +180,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="5"
@@ -164,7 +196,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#E64533"
+            android:backgroundTint="#C25BDE"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="+"
@@ -180,7 +212,7 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="6"
@@ -197,7 +229,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="7"
@@ -213,7 +245,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="8"
@@ -229,7 +261,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#E64533"
+            android:backgroundTint="#C25BDE"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="-"
@@ -245,7 +277,7 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="9"
@@ -262,7 +294,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="."
@@ -278,7 +310,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="/"
@@ -294,7 +326,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#E64533"
+            android:backgroundTint="#C25BDE"
             android:fontFamily="@font/baloo_paaji_2_semibold"
 
             android:paddingTop="12dp"
@@ -310,7 +342,7 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="("
@@ -326,7 +358,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text=")"
@@ -342,7 +374,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="C"
@@ -358,7 +390,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-5dp"
-            android:backgroundTint="#E64533"
+            android:backgroundTint="#C25BDE"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingLeft="1dp"
             android:paddingTop="12dp"
@@ -376,7 +408,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-3dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="1"
@@ -391,7 +423,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-3dp"
-            android:backgroundTint="#0083FF"
+            android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="2"
@@ -406,7 +438,7 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-3dp"
-            android:backgroundTint="#E64533"
+            android:backgroundTint="#C25BDE"
 
 
             android:fontFamily="@font/baloo_paaji_2_semibold"
