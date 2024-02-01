@@ -11,7 +11,6 @@ public class CalculatorMain extends AppCompatActivity{
     protected DarkAndLightModeHandler darkAndLightModeHandler=new DarkAndLightModeHandler(this);
     protected OperatorBtnEventHandler operatorBtnEventHandler=new OperatorBtnEventHandler(this);
     protected TFWhereUserEntersListener TFWhereUserEntersListener=new TFWhereUserEntersListener(this);
-    protected CodeICouldNotConvertToKotlin codeICouldNotConvertToKotlin=new CodeICouldNotConvertToKotlin(this);
     @Override
     public void onCreate(Bundle getCodeFromParent){
         super.onCreate(getCodeFromParent);

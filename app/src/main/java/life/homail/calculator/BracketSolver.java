@@ -27,7 +27,7 @@ public class BracketSolver {
         return (tempStr.toString().contains("-") || tempStr.toString().contains("/") || tempStr.toString().contains("x") || tempStr.toString().contains("+"));
     }
     private void solveTheExpressionFinalTime(){
-        this.equation=new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(this.equation.toString()));
+        this.equation=new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(this.equation));
     }
     private void solvingIt(){
         for (int i=0;i<this.equation.length();i++){
@@ -43,7 +43,7 @@ public class BracketSolver {
     }
     private void passTheExpressionToSolved(){
         if (this.equationToSolve.length()>1) {
-            StringBuilder answer = new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(this.equationToSolve.toString()));
+            StringBuilder answer = new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(this.equationToSolve));
             this.equation.insert(this.indexToInsertAnswer, answer);
         } else {
             this.equation.insert(this.indexToInsertAnswer,this.equationToSolve);

@@ -19,7 +19,7 @@ public class TFWhereUserEntersListener implements TextWatcher{
         this.initializeSomeThings(editable);
         if (!editable.toString().isEmpty() && this.calculatorMain.ifValidExpression.ifValidMain()){
             if (editable.toString().contains("(") || editable.toString().contains(")")) this.solvedExpression=this.calculatorMain.bracketSolver.bracketSolverMain(this.equation);
-            else this.solvedExpression=new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(String.valueOf(this.equation)));
+            else this.solvedExpression=new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(this.equation));
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(this.solvedExpression);
         } else if (editable.toString().isEmpty()){
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(null);
