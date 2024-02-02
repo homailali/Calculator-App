@@ -35,17 +35,19 @@ public class DarkAndLightModeHandler implements View.OnClickListener{
         // Background
         // Layout color settings
         this.changeLayoutInnerColor("#FFFFFF");
+        this.changeOuterLayoutBgColor("#E6E6E6");
         // Btn Color settings
-        this.setOperatorBtnColor("#9FA6AE");
-        this.setNumberBtnColor("#F6F8F5");
-        this.setOtherBtnColor("#F6F8F5");
+        this.setOperatorBtnColor("#F28705");
+        this.setNumberBtnColor("#CECECE");
+        this.setOtherBtnColor("#CECECE");
         this.modeChangerBtnColor("#FFFFFF");
         // Text
         // BtnTextColorSettings
-        this.setAllBtnTextColor("#000000");
+        this.setBtnTextColorOtherThenOperator("#2E2E2E");
+        this.setOperatorBtnTextColor("#FFFFFF");
         // TextFieldSettings
-        this.setTextFieldTextColor("#000000","#545454");
-        this.setCasioHeadingColor("#000000");
+        this.setTextFieldTextColor("#2E2E2E","#696969");
+        this.setCasioHeadingColor("#2E2E2E");
         // TextField Stroke settings
         this.changeTextFieldStroke("light");
     }
@@ -57,6 +59,7 @@ public class DarkAndLightModeHandler implements View.OnClickListener{
 
         // Layout color settings
         this.changeLayoutInnerColor("#2A2E37");
+        this.changeOuterLayoutBgColor("#2A2E37");
         // Btn Color settings
         this.setOperatorBtnColor("#C25BDE");
         this.setNumberBtnColor("#2F3646");
@@ -64,7 +67,8 @@ public class DarkAndLightModeHandler implements View.OnClickListener{
         this.modeChangerBtnColor("#2A2E37");
         this.modeChangerBtnColor("#2A2E37");
         // BtnTextColorSettings
-        this.setAllBtnTextColor("#FFFFFF");
+        this.setBtnTextColorOtherThenOperator("#FFFFFF");
+        this.setOperatorBtnTextColor("#FFFFFF");
         // TextFieldSettings
         this.setTextFieldTextColor("#FFFFFF","#A3A3A3");
         this.setCasioHeadingColor("#FFFFFF");
@@ -105,12 +109,15 @@ public class DarkAndLightModeHandler implements View.OnClickListener{
     private void changeLayoutInnerColor(String color){
         this.calculatorMain.calculatorViews.constraintLayoutInner.setBackgroundColor(Color.parseColor(color));
     }
+    private void changeOuterLayoutBgColor(String color){
+        this.calculatorMain.calculatorViews.constraintLayoutOuter.setBackgroundColor(Color.parseColor(color));
+    }
     // Text settings
     private void setTextFieldTextColor(String userColor,String answerColor){
         this.calculatorMain.calculatorViews.textFieldWhereUserEnters.setTextColor(Color.parseColor(userColor));
         this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setTextColor(Color.parseColor(answerColor));
     }
-    private void setAllBtnTextColor(String color){
+    private void setBtnTextColorOtherThenOperator(String color){
         this.calculatorMain.calculatorViews.button0.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.button1.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.button2.setTextColor(Color.parseColor(color));
@@ -122,17 +129,19 @@ public class DarkAndLightModeHandler implements View.OnClickListener{
         this.calculatorMain.calculatorViews.button8.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.button9.setTextColor(Color.parseColor(color));
 
-        this.calculatorMain.calculatorViews.minusBtn.setTextColor(Color.parseColor(color));
-        this.calculatorMain.calculatorViews.plusBtn.setTextColor(Color.parseColor(color));
-        this.calculatorMain.calculatorViews.multiplyBtn.setTextColor(Color.parseColor(color));
-        this.calculatorMain.calculatorViews.equalBtn.setTextColor(Color.parseColor(color));
-        this.calculatorMain.calculatorViews.deleteOneBtn.setTextColor(Color.parseColor(color));
 
         this.calculatorMain.calculatorViews.decimalPointBtn.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.divideBtn.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.leftBracketBtn.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.rightBracketBtn.setTextColor(Color.parseColor(color));
         this.calculatorMain.calculatorViews.allClearBtn.setTextColor(Color.parseColor(color));
+    }
+    private void setOperatorBtnTextColor(String color){
+        this.calculatorMain.calculatorViews.minusBtn.setTextColor(Color.parseColor(color));
+        this.calculatorMain.calculatorViews.plusBtn.setTextColor(Color.parseColor(color));
+        this.calculatorMain.calculatorViews.multiplyBtn.setTextColor(Color.parseColor(color));
+        this.calculatorMain.calculatorViews.equalBtn.setTextColor(Color.parseColor(color));
+        this.calculatorMain.calculatorViews.deleteOneBtn.setTextColor(Color.parseColor(color));
     }
     private void setCasioHeadingColor(String color){
         this.calculatorMain.calculatorViews.casioHeading.setTextColor(Color.parseColor(color));

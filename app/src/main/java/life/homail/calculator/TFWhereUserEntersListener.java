@@ -5,6 +5,7 @@ public class TFWhereUserEntersListener implements TextWatcher{
     private CalculatorMain calculatorMain;
     private StringBuilder equation;
     private StringBuilder solvedExpression;
+    private StringBuilder answer;
     protected TFWhereUserEntersListener(CalculatorMain calculatorMain){
         this.calculatorMain=calculatorMain;
     }
@@ -16,16 +17,36 @@ public class TFWhereUserEntersListener implements TextWatcher{
     }
     @Override
     public void afterTextChanged(Editable editable){
-        this.initializeSomeThings(editable);
-        if (!editable.toString().isEmpty() && this.calculatorMain.ifValidExpression.ifValidMain()){
-            if (editable.toString().contains("(") || editable.toString().contains(")")) this.solvedExpression=this.calculatorMain.bracketSolver.bracketSolverMain(this.equation);
-            else this.solvedExpression=new StringBuilder(this.calculatorMain.solveExpression.solveExpressionMain(this.equation));
-            this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(this.solvedExpression);
-        } else if (editable.toString().isEmpty()){
+        if (editable.toString().isEmpty() || this.containsSymbol(editable)) {
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(null);
+            return;
+        }
+        this.ifEditableIsNotEmpty(editable);
+    }
+
+
+    private boolean containsSymbol(Editable editable){
+        String tempStr=String.valueOf(editable);
+        return !(tempStr.contains("/") || tempStr.contains("+") || tempStr.contains("-") || tempStr.contains("x"));
+    }
+
+    private void ifEditableIsNotEmpty(Editable editable){
+        this.initializeSomeThings(editable);
+        this.replaceMultiplySymbol();
+        this.answer=this.calculatorMain.solveExpression.solveExpressionMain(this.equation);
+        if (answer!=null){
+            this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(this.answer);
         }
     }
     private void initializeSomeThings(Editable editable){
         this.equation=new StringBuilder(editable);
+        this.answer=new StringBuilder();
+    }
+    private void replaceMultiplySymbol(){
+        for (int i=0;i<this.equation.length();i++){
+            if (this.equation.charAt(i)=='x'){
+                this.equation.setCharAt(i,'*');
+            }
+        }
     }
 }

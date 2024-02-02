@@ -3,10 +3,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 public class CalculatorMain extends AppCompatActivity{
     protected CalculatorViews calculatorViews;
-    protected BracketSolver bracketSolver=new BracketSolver(this);
     protected EqualBtnHandler equalBtnHandler=new EqualBtnHandler(this);
     protected SolveExpression solveExpression=new SolveExpression(this);
-    protected IfValidExpression ifValidExpression=new IfValidExpression(this);
     protected NumberBtnEventHandler numberBtnEventHandler=new NumberBtnEventHandler(this);
     protected DarkAndLightModeHandler darkAndLightModeHandler=new DarkAndLightModeHandler(this);
     protected OperatorBtnEventHandler operatorBtnEventHandler=new OperatorBtnEventHandler(this);
