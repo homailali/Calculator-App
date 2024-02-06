@@ -17,26 +17,30 @@ public class TFWhereUserEntersListener implements TextWatcher{
     }
     @Override
     public void afterTextChanged(Editable editable){
-        if (editable.toString().isEmpty() || this.containsSymbol(editable)) {
+        if (editable.toString().isEmpty()){
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(null);
             return;
-        }
+        } else if (this.containsSymbol(editable)) return;
         this.ifEditableIsNotEmpty(editable);
     }
-
-
     private boolean containsSymbol(Editable editable){
         String tempStr=String.valueOf(editable);
         return !(tempStr.contains("/") || tempStr.contains("+") || tempStr.contains("-") || tempStr.contains("x"));
     }
-
     private void ifEditableIsNotEmpty(Editable editable){
         this.initializeSomeThings(editable);
         this.replaceMultiplySymbol();
         this.answer=this.calculatorMain.solveExpression.solveExpressionMain(this.equation);
-        if (answer!=null){
+        if (this.ifAllowedToSetAnswer()){
             this.calculatorMain.calculatorViews.textFieldWhereAnswerDisplays.setText(this.answer);
         }
+    }
+    private boolean ifAllowedToSetAnswer(){
+        if (this.answer==null) return false;
+        else if (this.answer.toString().contains("mozilla")) return false;
+        else if (this.answer.toString().equalsIgnoreCase("nan")) return false;
+        else if (this.answer.toString().contains("/")) return false;
+        return true;
     }
     private void initializeSomeThings(Editable editable){
         this.equation=new StringBuilder(editable);

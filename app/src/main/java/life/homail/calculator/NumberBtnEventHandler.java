@@ -9,6 +9,7 @@ public class NumberBtnEventHandler implements View.OnClickListener{
     @Override
     public void onClick(View view){
         this.findTheBtnAndPerformActionsAccordingly(view);
+        this.calculatorMain.soundHandlerAndPlayer.playSound();
     }
 
     private void findTheBtnAndPerformActionsAccordingly(View view){
@@ -33,6 +34,5 @@ public class NumberBtnEventHandler implements View.OnClickListener{
         } else if (view.getId()==R.id.button9){
             this.calculatorMain.calculatorViews.textFieldWhereUserEnters.append(this.calculatorMain.calculatorViews.button9.getText());
         }
-
     }
 }

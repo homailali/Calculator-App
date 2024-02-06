@@ -24,8 +24,6 @@ public class SolveExpression {
         this.removeZeroAtTheEnd();
         this.removeSomeDigitsAfterDecimalPoint();
     }
-
-
     private void removeSomeDigitsAfterDecimalPoint(){
         if (this.answer.toString().contains("E")) return;
         int count=0;

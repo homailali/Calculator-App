@@ -10,6 +10,7 @@ public class OperatorBtnEventHandler implements View.OnClickListener{
     @Override
     public void onClick(View view){
         this.findBtnAndPerformOperation(view);
+        this.calculatorMain.soundHandlerAndPlayer.playSound();
     }
     private void findBtnAndPerformOperation(View view){
         if (view.getId()==R.id.minusBtn){

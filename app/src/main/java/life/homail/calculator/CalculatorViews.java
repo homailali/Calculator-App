@@ -42,6 +42,8 @@ public class CalculatorViews{
     protected ConstraintLayout constraintLayoutInner;
     // TextView
     protected TextView casioHeading;
+    // Sound on off btn
+    protected Button soundOnOffBtn;
     // Constructor
     public CalculatorViews(CalculatorMain calculatorMain){
         this.calculatorMain = calculatorMain;
@@ -52,13 +54,14 @@ public class CalculatorViews{
         this.initializeOperatorBtn();
         this.initializeOtherBtn();
         this.initializeTextFields();
+        this.initializeConsLayout();
+        this.initializeCasioHeading();
+        this.initializeSoundOnOfButton();
         this.setNumberBtnEventHandler();
         this.setOperatorBtnEventHandler();
         this.setOtherBtnEventHandler();
         this.setTextFieldHandler();
-        this.initializeAndSetDarkModeHandler();
-        this.initializeConsLayout();
-        this.initializeCasioHeading();
+        this.setSoundOnOffBtnHandler();
     }
     // Methods
     private void initializeNumberBtn(){
@@ -91,10 +94,6 @@ public class CalculatorViews{
         this.textFieldWhereUserEnters=this.calculatorMain.findViewById(R.id.textFieldWhereUserEnters);
         this.textFieldWhereAnswerDisplays=this.calculatorMain.findViewById(R.id.textFieldWhereAnswerDisplays);
     }
-    private void initializeAndSetDarkModeHandler(){
-        this.darkAndLightModeBtn=this.calculatorMain.findViewById(R.id.darkAndLightMode);
-        this.darkAndLightModeBtn.setOnClickListener(this.calculatorMain.darkAndLightModeHandler);
-    }
     private void initializeConsLayout(){
         this.constraintLayoutOuter=this.calculatorMain.findViewById(R.id.consLayOuter);
         this.constraintLayoutInner=this.calculatorMain.findViewById(R.id.consLayInner);
@@ -102,7 +101,13 @@ public class CalculatorViews{
     private void initializeCasioHeading(){
         this.casioHeading=this.calculatorMain.findViewById(R.id.casioHeading);
     }
+    private void initializeSoundOnOfButton(){
+        this.soundOnOffBtn=this.calculatorMain.findViewById(R.id.soundOnOff);
+    }
     // SetEventHandler
+    private void setSoundOnOffBtnHandler(){
+        this.soundOnOffBtn.setOnClickListener(e->this.calculatorMain.soundHandlerAndPlayer.turnTheSoundOnOrOff());
+    }
     private void setNumberBtnEventHandler() {
         this.button0.setOnClickListener(this.calculatorMain.numberBtnEventHandler);
         this.button1.setOnClickListener(this.calculatorMain.numberBtnEventHandler);
@@ -151,15 +156,14 @@ public class CalculatorViews{
         else if (view.getId()==R.id.equalBtn){
             this.calculatorMain.equalBtnHandler.equalBtnHandlerMain();
         }
+        this.calculatorMain.soundHandlerAndPlayer.playSound();
     }
-
     private void deleteOneUserEnterTextField(){
         StringBuilder stringBuilder1=new StringBuilder(Objects.requireNonNull(this.textFieldWhereUserEnters.getText(),"Text Field is null"));
         if (stringBuilder1.toString().isEmpty()) return;
         stringBuilder1.deleteCharAt(stringBuilder1.length()-1);
         this.textFieldWhereUserEnters.setText(stringBuilder1.toString());
     }
-
     private void addTextToTextField(String text){
 
         this.textFieldWhereUserEnters.append(text);

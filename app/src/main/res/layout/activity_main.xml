@@ -6,15 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2A2E37"
-
-
     tools:context=".CalculatorMain">
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/consLayInner"
         android:layout_width="0dp"
-
+        app:rippleColor="#20FFFFFF"
         android:layout_height="0dp"
         android:layout_marginBottom="-3dp"
         android:background="#2A2E37"
@@ -24,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="0dp"
@@ -36,7 +31,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textFieldWhereUserEnters"
                 android:layout_width="match_parent"
@@ -55,7 +49,6 @@
                 android:textIsSelectable="false"
                 android:textSize="60dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -65,7 +58,6 @@
             app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textFieldWhereAnswerDisplays"
                 android:layout_width="match_parent"
@@ -84,7 +76,6 @@
                 android:textIsSelectable="false"
                 android:textSize="40dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
         <TextView
             android:id="@+id/casioHeading"
             android:layout_width="wrap_content"
@@ -95,35 +86,28 @@
             android:text="Casio"
             android:textColor="@color/white"
             android:textSize="45dp"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <Button
-            android:id="@+id/darkAndLightMode"
+            android:id="@+id/soundOnOff"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="33dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="#2A2E37"
-            android:drawableTop="@drawable/light_mode_white"
-
-
-
+            android:drawableTop="@drawable/sound_on"
             android:paddingTop="5dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
+        app:rippleColor="#20FFFFFF"
         android:layout_height="wrap_content"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -137,9 +121,10 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="0"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -152,10 +137,10 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="3"
+            android:textColor="@color/white"
             android:textSize="35dp"
-
-
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/button0"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -169,8 +154,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="4"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/button1"
             app:layout_constraintStart_toEndOf="@+id/button3" />
@@ -185,8 +171,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="5"
+            android:textColor="@color/white"
             android:textSize="35dp"
-
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintStart_toEndOf="@+id/button4" />
@@ -201,8 +188,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="+"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/equalBtn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -217,10 +205,10 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="6"
-
-
+            android:textColor="@color/white"
             android:textSize="35dp"
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -234,8 +222,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="7"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/button4"
             app:layout_constraintStart_toEndOf="@+id/button6" />
@@ -250,8 +239,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="8"
+            android:textColor="@color/white"
             android:textSize="35dp"
-
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/button5"
             app:layout_constraintStart_toEndOf="@+id/button7" />
@@ -266,8 +256,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="-"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/plusBtn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -282,10 +273,10 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="9"
+            android:textColor="@color/white"
             android:textSize="35dp"
-
-
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/button6"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -299,8 +290,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="."
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/button7"
             app:layout_constraintStart_toEndOf="@+id/button9" />
@@ -315,8 +307,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="/"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/button8"
             app:layout_constraintStart_toEndOf="@+id/decimalPointBtn" />
@@ -329,10 +322,11 @@
             android:layout_marginBottom="-5dp"
             android:backgroundTint="#C25BDE"
             android:fontFamily="@font/baloo_paaji_2_semibold"
-
             android:paddingTop="12dp"
             android:text="x"
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/minusBtn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -347,9 +341,10 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="("
+            android:textColor="@color/white"
             android:textSize="35dp"
-
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/button9"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -363,8 +358,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text=")"
-
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/decimalPointBtn"
             app:layout_constraintStart_toEndOf="@+id/leftBracketBtn" />
@@ -379,8 +375,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="C"
+            android:textColor="@color/white"
             android:textSize="35dp"
-
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toTopOf="@+id/divideBtn"
             app:layout_constraintStart_toEndOf="@+id/rightBracketBtn" />
@@ -397,8 +394,10 @@
             android:paddingTop="12dp"
             android:paddingRight="5dp"
             android:text="\u232b"
+            android:textColor="@color/white"
             android:textSize="30dp"
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/multiplyBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/allClear" />
@@ -413,7 +412,9 @@
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="1"
+            android:textColor="@color/white"
             android:textSize="35dp"
+            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button0" />
@@ -424,12 +425,15 @@
             android:layout_height="80dp"
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-3dp"
+            android:background="@null"
             android:backgroundTint="#2F3646"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:paddingTop="12dp"
             android:text="2"
+            android:textColor="@color/white"
             android:textSize="35dp"
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button1" />
 
@@ -440,19 +444,15 @@
             android:layout_marginStart="3dp"
             android:layout_marginBottom="-3dp"
             android:backgroundTint="#C25BDE"
-
-
             android:fontFamily="@font/baloo_paaji_2_semibold"
-
-
             android:paddingTop="12dp"
             android:text="="
+            android:textColor="@color/white"
             android:textSize="35dp"
             app:cornerRadius="0dp"
+            app:rippleColor="#20FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button2" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
