@@ -20,17 +20,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
             app:boxStrokeColor="@color/white"
             app:cursorColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textFieldWhereUserEnters"
                 android:layout_width="match_parent"
@@ -76,31 +78,32 @@
                 android:textIsSelectable="false"
                 android:textSize="40dp" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:id="@+id/casioHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/baloo_paaji_2_semibold"
             android:text="Casio"
             android:textColor="@color/white"
-            android:textSize="45dp"
+            android:textSize="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/soundOnOff"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="33dp"
+            android:layout_marginTop="13dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="#2A2E37"
             android:drawableTop="@drawable/sound_on"
             android:paddingTop="5dp"
-            app:rippleColor="#20FFFFFF"
             app:cornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#20FFFFFF" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -393,7 +396,7 @@
             android:paddingLeft="1dp"
             android:paddingTop="12dp"
             android:paddingRight="5dp"
-            android:text="\u232b"
+            android:text="D"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:cornerRadius="0dp"
